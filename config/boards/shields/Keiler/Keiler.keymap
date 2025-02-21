@@ -20,10 +20,10 @@
 
 */
 
-/* &kscan0 { */
-/*     debounce-press-ms = <10>; */
-/*     debounce-release-ms = <15>; */
-/* }; */
+&kscan0 {
+  debounce-press-ms = <10>;
+  debounce-release-ms = <15>;
+};
 
 &mt {
   flavor="balanced";
