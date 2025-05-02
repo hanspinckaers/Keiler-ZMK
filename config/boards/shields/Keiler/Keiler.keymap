@@ -6,6 +6,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
+
 #define SYM 1
 #define NUM 2
 
@@ -136,7 +137,7 @@
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
      &kp BSLH      &kp TILDE     &kp STAR      &kp AMPS      &kp TILDE         &kp UNDER     &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT 
 // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-                                               &none &mo 1         &kp LALT          &kp LCTRL    &kp PRCNT &none
+                                               &BT_SEL 0 &mo 1         &kp LALT          &kp LCTRL    &kp PRCNT &BT_SEL 1
 //                                           ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
         >;
         };
