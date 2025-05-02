@@ -41,15 +41,6 @@
 / {
     behaviors {
 
-        lm: layer_mod {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <125>;
-            bindings = <&mo>, <&kp>;
-        };
-
         enter: enter_mod {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -115,7 +106,7 @@
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────
      &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &kp M         &kp COMMA      &kp DOT      &enter LALT SINGLE_QUOTE
 // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-                                          &lm 1 LALT  &lt 1 ESC    &mt LGUI BSPC       &kp SPACE     &kp LSHIFT  &kp LCTRL
+                                          &lt 1 LALT  &lt 1 ESC    &mt LGUI BSPC       &kp SPACE     &kp LSHIFT  &kp LCTRL
         //                              ╰──────────┴──────────┴──────────╯     ╰──────────┴──────────┴──────────╯
         >;
         };
