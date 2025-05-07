@@ -39,6 +39,38 @@
 };
 
 / {
+    macros {
+        // Macro to send LCTRL + LSHIFT + F11
+        // This is equivalent to &kp LCTL(LSFT(F11)) but using explicit macro steps
+        lctrl_lshift_f11: lctrl_lshift_f11 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>; // Small delay between actions, can be 0
+            tap-ms = <10>;  // How long a "tap" is held, can be 0 for very quick taps
+            bindings
+                = <&macro_press &kp LCTRL>  // Press LCTRL
+                , <&macro_press &kp LSHFT>  // Press LSHFT
+                , <&macro_tap &kp F11>      // Tap F11 (press and release)
+                , <&macro_release &kp LSHFT>// Release LSHFT
+                , <&macro_release &kp LCTRL> // Release LCTRL
+                ;
+        };
+
+        // Macro to send LCTRL + LSHIFT + F12
+        lctrl_lshift_f12: lctrl_lshift_f12 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_press &kp LSHFT>
+                , <&macro_tap &kp F12>
+                , <&macro_release &kp LSHFT>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
+    };
     behaviors {
         lm: lm {
             compatible = "zmk,behavior-macro-two-param";
@@ -123,7 +155,7 @@
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────
      &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &kp M         &kp COMMA      &kp DOT      &enter LALT SINGLE_QUOTE
 // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-                                          &kp LCTL(LSFT(F11))  &lt 1 ESC    &mt LGUI BSPC       &kp SPACE     &kp LSHIFT  &kp LCTL(LSFT(F12))
+                                          &lctrl_lshift_f11  &lt 1 ESC    &mt LGUI BSPC       &kp SPACE     &kp LSHIFT  &lctrl_lshift_f12
         //                              ╰──────────┴──────────┴──────────╯     ╰──────────┴──────────┴──────────╯
         >;
         };
